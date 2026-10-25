@@ -1,6 +1,6 @@
 <!-- ═══════════════════════  HOLLOW PURPLE  ═══════════════════════ -->
 <p align="center">
-  <img src="assets/domain.svg" width="100%" alt="Priyam Ghosh: Hollow Purple banner" />
+  <img src="assets/domain.svg" width="100%" alt="Pixel-art Hollow Purple: Blue and Red merge into Purple. Priyam Ghosh, IIT (ISM) Dhanbad" />
 </p>
 
 <p align="center">
@@ -49,17 +49,16 @@ The idea above, written as Bayes' rule:
 
 ---
 
-## ♾️ Infinity: Zeno's Paradox
+## ♾️ Infinity
 
 <p align="center">
   <a href="https://priyam-ghosh-06.github.io/Priyam-Ghosh-06/">
-    <img src="assets/zeno.svg" width="100%" alt="Zeno's dichotomy arrives in finite time; the strike at Gojo halves its gap forever" />
+    <img src="assets/infinity.svg" width="100%" alt="Pixel-art Gojo: blasts slow down inside Infinity and freeze before touching him" />
   </a>
-  <br>
 </p>
 
 <details>
-<summary><b>Why Zeno's runner arrives but nothing ever touches Gojo (proof)</b></summary>
+<summary><b>Why nothing ever touches Gojo, and how that differs from Zeno's paradox (proof)</b></summary>
 
 <br>
 
