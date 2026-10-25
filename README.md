@@ -55,13 +55,13 @@ in those everyday facts about learning. I like proofs more than leaderboards.
 
 Inside a domain, every technique is a guaranteed hit. Mine is a single equation:
 
-$$
+```math
 \underbrace{p(\theta \mid \mathcal{D})}_{\text{what the model becomes}}
 \;\propto\;
 \underbrace{p(\mathcal{D} \mid \theta)}_{\text{what the data says}}
 \;\cdot\;
 \underbrace{p(\theta)}_{\text{how humans learn}}
-$$
+```
 
 Most of ML's progress comes from scaling the **likelihood** (more data, bigger models).
 My domain is the **prior**: the inductive biases we can borrow from human learning.
@@ -72,9 +72,9 @@ My domain is the **prior**: the inductive biases we can borrow from human learni
 
 | Technique | In the Jujutsu world | In my research |
 |---|---|---|
-| ♾️ **Limitless: Infinity** | Gojo's Infinity is a convergent series. You get closer forever and never arrive. | **Convergence theory.** When does $\sum_t \eta_t \nabla\mathcal{L}(\theta_t)$ actually reach a minimum, and how fast? |
-| ➕ **Reverse Cursed Technique** | Negative energy times negative energy gives positive energy: $(-)\times(-)=(+)$. | **Gradient descent.** Step *against* the gradient of the error: $\theta_{t+1} = \theta_t - \eta\,\nabla_\theta \mathcal{L}$. Mistakes become fuel. |
-| 📜 **Binding Vows** | Accept a restriction and gain power in return. | **Regularisation and constrained optimisation.** $\min_\theta \mathcal{L}(\theta) + \lambda\,\Omega(\theta)$. The Lagrange multiplier is the price of the vow. |
+| ♾️ **Limitless: Infinity** | Gojo's Infinity is a convergent series. You get closer forever and never arrive. | **Convergence theory.** When does $`\sum_t \eta_t \nabla\mathcal{L}(\theta_t)`$ actually reach a minimum, and how fast? |
+| ➕ **Reverse Cursed Technique** | Negative energy times negative energy gives positive energy: $`(-)\times(-)=(+)`$. | **Gradient descent.** Step *against* the gradient of the error: $`\theta_{t+1} = \theta_t - \eta\,\nabla_\theta \mathcal{L}`$. Mistakes become fuel. |
+| 📜 **Binding Vows** | Accept a restriction and gain power in return. | **Regularisation and constrained optimisation.** $`\min_\theta \mathcal{L}(\theta) + \lambda\,\Omega(\theta)`$. The Lagrange multiplier is the price of the vow. |
 | ⚡ **Black Flash** | A hit landed within 0.000001 s of the strike. Once you hit one, you get far better at landing them. | **Grokking and phase transitions.** Generalisation that arrives all at once, long after training loss has flattened. |
 | 🛞 **Mahoraga's Adaptation** | The wheel turns and the shikigami adapts to any phenomenon it has seen. | **Meta-learning and continual learning.** Learn to adapt, without catastrophically forgetting what came before. |
 | 💍 **Rika: Copy** | Yuta copies other sorcerers' techniques. | **Knowledge distillation and imitation learning.** A student network learns a teacher's technique. |
