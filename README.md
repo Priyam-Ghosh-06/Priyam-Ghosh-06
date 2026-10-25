@@ -56,7 +56,7 @@ The idea above, written as Bayes' rule:
 </p>
 
 <details>
-<summary><b>The mathematics of Infinity: convergence, measure, geometry, topology ((For all the JJK fans with reading comprehension)) </b></summary>
+<summary><b>The mathematics of Infinity: convergence, measure, geometry, topology (For all the JJK fans with reading comprehension) </b></summary>
 
 <br>
 
