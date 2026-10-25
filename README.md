@@ -52,50 +52,74 @@ The idea above, written as Bayes' rule:
 ## ♾️ Infinity
 
 <p align="center">
-  <a href="https://priyam-ghosh-06.github.io/Priyam-Ghosh-06/">
-    <img src="assets/infinity.svg" width="100%" alt="Pixel-art Gojo: blasts slow down inside Infinity and freeze before touching him" />
-  </a>
+  <img src="assets/infinity.svg" width="100%" alt="Pixel-art Gojo: attacks slow down inside Infinity and freeze before touching him" />
 </p>
 
 <details>
-<summary><b>Why nothing ever touches Gojo, and how that differs from Zeno's paradox (proof)</b></summary>
+<summary><b>The mathematics of Infinity: convergence, measure, geometry, topology</b></summary>
 
 <br>
 
-Both cover the same halving points. After $`N`$ halvings, the distance covered is
+> Following Achmad Roykhan Sabiq, *Mathematics Behind Jujutsu Kaisen: Gojo Satoru's Infinity* (Oxford University Mathematics Essay Competition, 2026).
+
+#### 1. Convergence: halving alone is no defence
+
+Gojo describes Infinity as endless halving: the attacker must cross half the gap, then half of what remains, forever. With the gap normalised to 1, the attacker passes the points $`z_n = 1 - 2^{-n}`$, and the distance covered after $`n`$ halvings is
 
 ```math
-S_N = \sum_{n=1}^{N} 2^{-n}, \qquad 2S_N - S_N = 1 - 2^{-N} \;\Longrightarrow\; S_N = 1 - 2^{-N} \xrightarrow{N\to\infty} 1 .
+S_n = \sum_{k=1}^{n} \frac{1}{2^k},
+\qquad
+S_n - \frac{1}{2} S_n = \frac{1}{2} - \frac{1}{2^{n+1}}
+\quad\Longrightarrow\quad
+S_n = 1 - \frac{1}{2^n} \to 1 .
 ```
 
-So distance alone can't tell them apart. **The clock can.**
+At constant speed the crossing times form the same geometric series, so the total time is finite too. That resolves Zeno's paradox, and it also means subdivision alone stops nothing: infinitely many steps, finite distance, finite time.
 
-**Zeno (constant speed $`v`$).** Segment $`n`$ has length $`d_0 2^{-n}`$ and takes $`\Delta t_n = d_0 2^{-n}/v`$:
+#### 2. Measure: the barrier takes up no space
+
+The set of halving points $`Z = \{z_1, z_2, \dots\}`$ has Lebesgue measure zero. For any $`\varepsilon > 0`$, cover each $`z_n`$ by an open interval of length $`\varepsilon / 2^n`$:
 
 ```math
-T_{\text{Zeno}} = \sum_{n=1}^{\infty} \frac{d_0}{v}\,2^{-n} = \frac{d_0}{v} < \infty .
+I_n = \left( z_n - \frac{\varepsilon}{2^{n+1}},\; z_n + \frac{\varepsilon}{2^{n+1}} \right),
+\qquad
+m^*(Z) \le \sum_{n=1}^{\infty} |I_n| = \sum_{n=1}^{\infty} \frac{\varepsilon}{2^n} = \varepsilon .
 ```
 
-Infinitely many steps, finite time. The runner **arrives**.
+Since $`\varepsilon`$ is arbitrary, $`m(Z) = 0`$. Infinitely many points, zero total length: whatever stops the attack, it is not the points.
 
-**Gojo's Infinity (every halving takes the same time $`\tau`$).**
+#### 3. Geometry: Infinity changes the ruler
+
+In a 2021 collaboration with RIKEN researchers (Jump GIGA, *Jujutsu Kaisen Abyss of Math Course*), Infinity is modelled not as subdivision but as a change of **metric**, the rule that turns a step $`dx`$ into a felt distance $`ds`$:
 
 ```math
-T_{\text{Infinity}} = \sum_{n=1}^{\infty} \tau = \infty ,
-\qquad \text{gap after time } t:\; g(t) = d_0\,2^{-t/\tau} = d_0\,e^{-kt} > 0 \;\; \forall t,\quad k = \tfrac{\ln 2}{\tau}.
+ds^2 = \sum_{i,j} g_{ij}\, dx_i\, dx_j ,
+\qquad
+K(x, y) = \exp\left( -\frac{\|x - y\|^2}{\sigma^2} \right).
 ```
 
-Equivalently $`\dot g = -k\,g`$: the attacker's speed is proportional to the distance left, so it **slows exactly as fast as it approaches** and never touches.
+The metric is built from the Gaussian kernel $`K`$, the same RBF kernel used to measure similarity in machine learning. Far from Gojo, $`ds \approx dx`$. Near him the metric blows up, and every step feels longer.
 
-> Convergent distances are not enough to arrive. The *times* must converge too. Zeno has both; Infinity has only the first.
-
-**The same shape in ML.** For $`f`$ that is $`\mu`$-strongly convex and $`L`$-smooth, gradient descent with step $`1/L`$ guarantees
+A one-dimensional picture shows why that stops the attack. *(This example is my illustration, not the RIKEN formula.)* Let $`r`$ be the gap to Gojo and let the felt distance be $`ds = \Omega(r)\,|dr|`$ with $`\Omega(r) = c/r`$. Then the felt distance to Gojo is infinite:
 
 ```math
-\lVert \theta_t - \theta^\ast \rVert^2 \le \left(1 - \tfrac{\mu}{L}\right)^{t} \lVert \theta_0 - \theta^\ast \rVert^2 ,
+\int_{\varepsilon}^{r_0} \frac{c}{r}\, dr = c \ln\frac{r_0}{\varepsilon} \to \infty
+\quad \text{as } \varepsilon \to 0 .
 ```
 
-a geometric halving of the *guarantee*, like Infinity's clock. Reaching accuracy $`\varepsilon`$ takes $`O\!\left(\tfrac{L}{\mu}\log\tfrac{1}{\varepsilon}\right)`$ steps, which grows without bound as $`\varepsilon \to 0`$.
+An attacker moving at constant felt speed $`v`$ obeys
+
+```math
+v = \Omega(r)\,|\dot r| = \frac{c\,|\dot r|}{r}
+\quad\Longrightarrow\quad
+r(t) = r_0\, e^{-vt/c} > 0 \quad \text{for all } t .
+```
+
+Every halving takes the same time $`c \ln 2 / v`$, so the halvings never finish. That is the steady beat of the GAP counter in the animation above.
+
+#### 4. Topology: how Sukuna got through
+
+The defence depends on $`\Omega`$ being continuous across the space between the attacker and Gojo. Mahoraga's adaptation, and then Sukuna's World Cutting Slash, aimed at the space itself instead of the points in it. A cut that breaks the continuity of space does not need to cross any distance. Infinity was not penetrated; the space carrying it was severed.
 
 </details>
 
