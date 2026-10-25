@@ -56,7 +56,6 @@ The idea above, written as Bayes' rule:
     <img src="assets/zeno.svg" width="100%" alt="Zeno's dichotomy arrives in finite time; the strike at Gojo halves its gap forever" />
   </a>
   <br>
-  <a href="https://priyam-ghosh-06.github.io/Priyam-Ghosh-06/"><b>▶ Play with it: scrub time, zoom ×2ⁿ, watch the clocks</b></a>
 </p>
 
 <details>
