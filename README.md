@@ -130,9 +130,7 @@ The defence depends on $`\Omega`$ being continuous across the space between the 
 <!-- ✏️ Replace every YOUR_… placeholder with your real handle/link. Delete any badge you don't use. -->
 <p align="center">
   <a href="https://www.linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/Divine%20Dogs-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
-  <a href="https://x.com/YOUR_X_HANDLE"><img src="https://img.shields.io/badge/Nue-X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" /></a>
-  <a href="https://www.kaggle.com/YOUR_KAGGLE"><img src="https://img.shields.io/badge/Max%20Elephant-Kaggle-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white" alt="Kaggle" /></a>
-  <a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/Round%20Deer-Email-ff4d5e?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+  <a href="mailto:24je0316@iitism.ac.in"><img src="https://img.shields.io/badge/Round%20Deer-Email-ff4d5e?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
 </p>
 
 ---
