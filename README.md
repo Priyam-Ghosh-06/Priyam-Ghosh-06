@@ -33,19 +33,6 @@ Mathematics is my strong point. I like to understand *why* something works, with
 </tr>
 </table>
 
----
-
-## 🌀 Domain Expansion
-
-The idea above, written as Bayes' rule:
-
-```math
-\underbrace{p(\theta \mid \mathcal{D})}_{\text{what the model becomes}}
-\;\propto\;
-\underbrace{p(\mathcal{D} \mid \theta)}_{\text{what the data says}}
-\;\cdot\;
-\underbrace{p(\theta)}_{\text{how humans learn}}
-```
 
 ---
 
